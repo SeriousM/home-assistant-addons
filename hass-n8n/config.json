@@ -1,6 +1,6 @@
 {
   "name": "Hass n8n",
-  "version": "1.205.1",
+  "version": "1.205.2",
   "slug": "hass-n8n",
   "description": "Self host your n8n instance",
   "arch": [
