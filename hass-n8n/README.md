@@ -4,7 +4,6 @@
 
 n8n (pronounced n-eight-n) helps you to interconnect every app with an API in the world with each other to share and manipulate its data without a single line of code. It is an easy to use, user-friendly and highly customizable service, which uses an intuitive user interface for you to design your unique workflows very fast. Hosted on your server and not based in the cloud, it keeps your sensible data very secure in your own trusted database.
 
-
 ## Installation
 
 Follow these steps to get the add-on installed on your system:
@@ -16,8 +15,7 @@ Follow these steps to get the add-on installed on your system:
 ## How configure it
 
 In the configuration section, set the port if the default one is not good for you. Enable auth if you want and SSL to.
-Even if unused, let the default variables set. 
-
+Even if unused, let the default variables set.
 
 ### Addon Configuration
 
@@ -27,6 +25,10 @@ Add-on configuration:
 auth: false
 auth_username: auth_username
 auth_password: changeme
+webhook_url: str,
+prometheus_metrics: false,
+allow_external: moment,lodash,
+allow_builtin: *
 timezone: Europe/Berlin
 protocol: http
 certfile: fullchain.pem
@@ -45,13 +47,25 @@ The username is basic auth is enabled.
 
 The password of the basic auth
 
+### Option: `webhook_url` (required)
+
+webhook_url
+
+### Option: `allow_external` (required)
+
+NODE_FUNCTION_ALLOW_EXTERNAL
+
+### Option: `allow_builtin` (required)
+
+NODE_FUNCTION_ALLOW_BUILTIN
+
 ### Option: `timezone` (required)
 
 The timezone variable is used for the Cron node which trigger event based on time.
 
 ### Option: `protocol` (required)
 
-http for unencrypted traffic  
+http for unencrypted traffic
 https for encrypted traffic.
 
 If https, fill SSL cert variable accordingly
@@ -67,7 +81,6 @@ The private key of the SSL certificate if https enabled
 ## How to use it ?
 
 Just start the addon and head to the webui at http(s)://host:port (here 5678 by default)
-
 
 ## Useful ressources :
 

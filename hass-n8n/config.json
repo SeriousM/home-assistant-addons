@@ -1,24 +1,18 @@
 {
-  "name": "Hass n8n",
-  "version": "1.205.3",
+  "name": "n8n",
+  "version": "0.206.1",
   "slug": "hass-n8n",
-  "description": "Self host your n8n instance",
-  "arch": [
-    "armhf",
-    "armv7",
-    "aarch64",
-    "amd64",
-    "i386"
-  ],
-  "startup": "application",
-  "boot": "auto",
+  "description": "hass-n8n forked from Rbillon59 by niefuend",
+  "arch": ["amd64", "aarch64"],
+  "stage": "experimental",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:5678]/",
   "icon": "icon.png",
-  "logo": "logo.png",
-  "webui": "[PROTO:protocol]://[HOST]:[PORT:5678]/",
-  "map": [
-    "ssl"
-  ],
-  "apparmor": true,
+  "logo": "icon.png",
+  "map": ["ssl"],
+  "panel_icon": "mdi:family-tree",
+  "ingress": true,
+  "ingress_port": 5678,
+  "ingress_stream": true,
   "ports": {
     "5678/tcp": 5678
   },
@@ -29,8 +23,16 @@
     "auth": false,
     "auth_username": "",
     "auth_password": "",
+    "db_host": "core-mariadb",
+    "db_user": "n8n",
+    "db_password": "changeme",
+    "host": "",
+    "url_path": "/",
+    "webhook_url": "",
+    "allow_external": "moment,lodash",
+    "allow_builtin": "*",
     "timezone": "Europe/Berlin",
-    "protocol": "http",
+    "telemetry": false,
     "certfile": "fullchain.pem",
     "keyfile": "privkey.pem"
   },
@@ -38,9 +40,19 @@
     "auth": "bool",
     "auth_username": "str?",
     "auth_password": "str?",
-    "timezone": "str",
-    "protocol": "str",
-    "certfile": "str",
-    "keyfile": "str"
+    "db_type": "list(sqlite|mariadb|mysqldb|postgresdb)?",
+    "db_host": "str?",
+    "db_user": "str?",
+    "db_password": "str?",
+    "protocol": "list(http|https)?",
+    "host": "str?",
+    "url_path": "str?",
+    "webhook_url": "str?",
+    "allow_external": "str?",
+    "allow_builtin": "str?",
+    "timezone": "str?",
+    "telemetry": "bool",
+    "certfile": "str?",
+    "keyfile": "str?"
   }
 }
