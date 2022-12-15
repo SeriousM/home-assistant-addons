@@ -20,6 +20,7 @@ echo "Set env variables"
 
 # REQUIRED
 
+# reference to n8n environment variables: https://docs.n8n.io/hosting/environment-variables/environment-variables
 
 export N8N_BASIC_AUTH_ACTIVE="$(jq --raw-output '.auth // empty' $CONFIG_PATH)"
 export N8N_BASIC_AUTH_USER="$(jq --raw-output '.auth_username // empty' $CONFIG_PATH)"
