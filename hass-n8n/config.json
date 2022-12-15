@@ -8,7 +8,7 @@
   "webui": "[PROTO:ssl]://[HOST]:[PORT:5678]/",
   "icon": "icon.png",
   "logo": "icon.png",
-  "map": ["ssl"],
+  "map": ["ssl","config:rw"],
   "panel_icon": "mdi:family-tree",
   "ingress": true,
   "ingress_port": 5678,
