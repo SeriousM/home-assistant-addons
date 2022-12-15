@@ -47,9 +47,9 @@ case "${DB_TYPE}" in
 esac
 
 export GENERIC_TIMEZONE="$(jq --raw-output '.timezone // empty' $CONFIG_PATH)"
-# export WEBHOOK_URL="$(jq --raw-output '.webhook_url // empty' $CONFIG_PATH)"
-# export WEBHOOK_TUNNEL_URL="$(jq --raw-output '.webhook_url // empty' $CONFIG_PATH)"
-# export VUE_APP_URL_BASE_API="$(jq --raw-output '.webhook_url // empty' $CONFIG_PATH)"
+export WEBHOOK_URL="$(jq --raw-output '.webhook_url // empty' $CONFIG_PATH)"
+export WEBHOOK_TUNNEL_URL="$(jq --raw-output '.webhook_url // empty' $CONFIG_PATH)"
+export VUE_APP_URL_BASE_API="$(jq --raw-output '.webhook_url // empty' $CONFIG_PATH)"
 
 export N8N_PROTOCOL="$(jq --raw-output '.protocol // empty' $CONFIG_PATH)"
 export N8N_HOST="$(jq --raw-output '.host // empty' $CONFIG_PATH)"
@@ -88,7 +88,7 @@ echo "last step"
 
 
 echo "Got started without arguments"
-exec su-exec node n8n --tunnel
+exec su-exec node n8n
 
 #if [ "$#" -gt 0 ]; then
 #  echo "Got started with arguments"
