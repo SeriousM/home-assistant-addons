@@ -49,7 +49,7 @@ LABEL \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="L0rdShrek" \
+    maintainer="SeriousM" \
     org.label-schema.description="Automate without limits" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="n8n" \
@@ -58,5 +58,5 @@ LABEL \
     org.label-schema.usage="https://github.com/hassio-addons/addon-example/tree/master/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
     org.label-schema.vcs-url="https://github.com/hassio-addons/addon-example" \
-    org.label-schema.vendor="L0rdShrek"\
+    org.label-schema.vendor="SeriousM"\
     org.opencontainers.image.source=${IMAGE_SOURCE}
