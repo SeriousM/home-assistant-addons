@@ -1,6 +1,5 @@
-# n8n@0.206.1.2
+# n8n@0.207.1.1
 
-**Release date**: 2022-12-06  L0rdShrek/HA-addons#69  
+**Release date**: 2022-12-13
 
-Revert tunnel changes.
-https://docs.n8n.io/hosting/installation/npm/#n8n-with-tunnel
+This is a bug fix release. It resolves an issue with undo.
