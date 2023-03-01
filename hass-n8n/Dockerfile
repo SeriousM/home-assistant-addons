@@ -2,7 +2,7 @@ ARG NODE_VERSION=16
 FROM node:${NODE_VERSION}-alpine
 
 # https://github.com/n8n-io/n8n/blob/master/CHANGELOG.md
-ARG N8N_VERSION=0.217.1
+ARG N8N_VERSION=0.2172
 
 RUN if [ -z "$N8N_VERSION" ] ; then echo "The N8N_VERSION argument is missing!" ; exit 1; fi
 
@@ -29,6 +29,12 @@ RUN apk --no-cache add --virtual fonts msttcorefonts-installer fontconfig && \
 ENV NODE_ICU_DATA /usr/local/lib/node_modules/full-icu
 
 WORKDIR /data
+
+# https://docs.n8n.io/hosting/scaling/execution-data/#enable-data-pruning
+ENV EXECUTIONS_DATA_PRUNE=true
+# 14 days
+ENV EXECUTIONS_DATA_MAX_AGE=336
+ENV EXECUTIONS_DATA_PRUNE_MAX_COUNT=50000
 
 COPY docker-entrypoint.sh /tmp/docker-entrypoint.sh
 ENTRYPOINT ["sh", "/tmp/docker-entrypoint.sh"]
