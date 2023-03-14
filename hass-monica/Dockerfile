@@ -3,7 +3,7 @@ FROM monica:4.0.0
 
 EXPOSE 80/tcp
 
-COPY docker_prestep_entrypoint /tmp/docker_prestep_entrypoint
+COPY docker_prestep_entrypoint.sh /tmp/docker_prestep_entrypoint.sh
 
 ENTRYPOINT ["sh", "/tmp/docker-entrypoint.sh"]
 # the cmd below is already provided by monica-image itself and we'll pass it to the embedded entrypoint.sh

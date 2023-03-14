@@ -1,8 +1,8 @@
 {
   "name": "monica",
-  "version": "4.0.0.1",
+  "version": "4.0.0.2",
   "slug": "hass-monica",
-  "description": "hass-monica forked from SeriousM by SeriousM",
+  "description": "hass-monica forked from SeriousM",
   "arch": [
     "amd64",
     "aarch64"
