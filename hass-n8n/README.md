@@ -103,7 +103,7 @@ Got questions?
 
 You can open an issue on Github and i'll try to answer it
 
-[repository]: https://github.com/Rbillon59/hass-n8n
+[repository]: https://github.com/SeriousM/home-assistant-addons
 
 ## License
 
