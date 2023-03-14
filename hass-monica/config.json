@@ -53,7 +53,7 @@
     "app_email_new_users_notification": "",
     "app_disable_signup": true,
     "app_signup_double_optin": false,
-    "app_trusted_proxies": "",
+    "app_trusted_proxies": "*",
     "app_trusted_cloudflare": false,
     "log_channel": "daily",
     "sentry_support": false,
