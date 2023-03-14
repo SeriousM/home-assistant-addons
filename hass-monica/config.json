@@ -13,10 +13,10 @@
   "logo": "icon.png",
   "panel_icon": "mdi:panda",
   "ingress": true,
-  "ingress_port": 7760,
+  "ingress_port": 80,
   "ingress_stream": true,
   "ports": {
-    "7760/tcp": 7760
+    "80/tcp": 7760
   },
   "ports_description": {
     "7760/tcp": "Monica Web interface"
