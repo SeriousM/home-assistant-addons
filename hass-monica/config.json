@@ -1,6 +1,6 @@
 {
   "name": "Monica",
-  "version": "4.0.0.7",
+  "version": "4.0.0.8",
   "slug": "hass-monica",
   "description": "hass-monica forked from SeriousM",
   "arch": [
@@ -8,7 +8,7 @@
     "aarch64"
   ],
   "stage": "experimental",
-  "webui": "http://[HOST]:[PORT:7760]/",
+  "webui": "http://[HOST]:[PORT:80]/",
   "icon": "icon.png",
   "logo": "icon.png",
   "panel_icon": "mdi:panda",
@@ -19,7 +19,7 @@
     "80/tcp": 7760
   },
   "ports_description": {
-    "7760/tcp": "Monica Web interface"
+    "80/tcp": "Monica Web interface"
   },
   "options": {
     "app_env": "production",

@@ -1,11 +1,17 @@
 # Changelog: https://github.com/monicahq/monica/blob/main/CHANGELOG.md
 FROM monica:4.0.0
 
+RUN apt-get update && apt-get install -y \
+    jq \
+    && rm -rf /var/lib/apt/lists/*
+
 EXPOSE 80/tcp
 
-COPY docker_prestep_entrypoint.sh /tmp/docker_prestep_entrypoint.sh
+WORKDIR /usr/local/bin
 
-ENTRYPOINT ["/tmp/docker_prestep_entrypoint.sh"]
+COPY docker_prestep_entrypoint.sh docker_prestep_entrypoint.sh
+
+ENTRYPOINT ["docker_prestep_entrypoint.sh"]
 
 # Build arguments
 ARG BUILD_ARCH
@@ -24,7 +30,7 @@ LABEL \
     maintainer="SeriousM" \
     org.label-schema.description="Organize the social interactions with your loved ones" \
     org.label-schema.build-date=${BUILD_DATE} \
-    org.label-schema.name="n8n" \
+    org.label-schema.name="monica" \
     org.label-schema.schema-version="1.0" \
     org.label-schema.url="https://addons.community" \
     org.label-schema.usage="https://github.com/hassio-addons/addon-example/tree/master/README.md" \
