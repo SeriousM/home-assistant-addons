@@ -5,7 +5,7 @@ EXPOSE 80/tcp
 
 COPY docker_prestep_entrypoint.sh /tmp/docker_prestep_entrypoint.sh
 
-ENTRYPOINT ["sh", "/tmp/docker-entrypoint.sh"]
+ENTRYPOINT ["sh", "/tmp/docker_prestep_entrypoint.sh"]
 # the cmd below is already provided by monica-image itself and we'll pass it to the embedded entrypoint.sh
 # CMD ["apache2-foreground"]
 

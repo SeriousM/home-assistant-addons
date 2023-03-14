@@ -1,6 +1,6 @@
 {
-  "name": "monica",
-  "version": "4.0.0.5",
+  "name": "Monica",
+  "version": "4.0.0.6",
   "slug": "hass-monica",
   "description": "hass-monica forked from SeriousM",
   "arch": [
@@ -19,7 +19,7 @@
     "7760/tcp": 7760
   },
   "ports_description": {
-    "7760/tcp": "monica Web interface"
+    "7760/tcp": "Monica Web interface"
   },
   "options": {
     "app_env": "production",
