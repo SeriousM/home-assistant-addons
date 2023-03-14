@@ -272,6 +272,6 @@ fi
 
 echo "last step"
 
-echo "Got started arguments $@"
+echo "Got started arguments: $@"
 
-exec entrypoint.sh "$@"
+exec /usr/local/bin/entrypoint.sh apache2-foreground
