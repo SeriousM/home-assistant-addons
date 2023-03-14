@@ -1,6 +1,6 @@
 {
   "name": "monica",
-  "version": "4.0.0.2",
+  "version": "4.0.0.3",
   "slug": "hass-monica",
   "description": "hass-monica forked from SeriousM",
   "arch": [
@@ -16,7 +16,7 @@
   "ingress_port": 7760,
   "ingress_stream": true,
   "ports": {
-    "7760/tcp": 80
+    "7760/tcp": 7760
   },
   "ports_description": {
     "7760/tcp": "monica Web interface"
@@ -91,7 +91,7 @@
     "app_key": "str",
     "hash_salt": "str(32,32)",
     "hash_length": "int",
-    "app_url": "url",
+    "app_url": "str",
     "app_force_url": "bool",
     "db_connection": "list(mysql)",
     "db_host": "str",
@@ -100,7 +100,7 @@
     "db_username": "str",
     "db_password": "str",
     "db_prefix": "str?",
-    "db_test_host": "str?",
+    "db_test_host": "str",
     "db_test_port": "port",
     "db_test_database": "str",
     "db_test_username": "str",
@@ -129,10 +129,10 @@
     "queue_connection": "str",
     "default_max_upload_size": "int",
     "default_max_storage_size": "int",
-    "filesystem_disk": "list(public)",
+    "filesystem_disk": "list(public|s3)",
     "aws_key": "str?",
     "aws_secret": "str?",
-    "aws_region": "list(us-east-1)",
+    "aws_region": "str",
     "aws_bucket": "str?",
     "aws_server": "str?",
     "s3_path_style": "str?",
