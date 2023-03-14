@@ -1,6 +1,6 @@
 {
   "name": "monica",
-  "version": "4.0.0.4",
+  "version": "4.0.0.5",
   "slug": "hass-monica",
   "description": "hass-monica forked from SeriousM",
   "arch": [
@@ -88,8 +88,8 @@
   "schema": {
     "app_env": "list(local|production)",
     "app_debug": "bool",
-    "app_key": "str(32,32)",
-    "hash_salt": "str(20,)",
+    "app_key": "str",
+    "hash_salt": "str",
     "hash_length": "int",
     "app_url": "str",
     "app_force_url": "bool",
