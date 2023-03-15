@@ -11,7 +11,7 @@ WORKDIR /var/www/html
 
 COPY docker_prestep_entrypoint.sh /usr/local/bin/
 
-ENTRYPOINT ["docker_prestep_entrypoint.sh"]
+ENTRYPOINT ["sh", "docker_prestep_entrypoint.sh"]
 
 # Build arguments
 ARG BUILD_ARCH
