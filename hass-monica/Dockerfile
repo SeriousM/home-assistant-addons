@@ -7,11 +7,11 @@ RUN apt-get update && apt-get install -y \
 
 EXPOSE 80/tcp
 
-WORKDIR /usr/local/bin
+WORKDIR /var/www/html
 
-COPY docker_prestep_entrypoint.sh docker_prestep_entrypoint.sh
+COPY docker_prestep_entrypoint.sh /usr/local/bin/
 
-ENTRYPOINT ["sh", "docker_prestep_entrypoint.sh"]
+ENTRYPOINT ["docker_prestep_entrypoint.sh"]
 
 # Build arguments
 ARG BUILD_ARCH
