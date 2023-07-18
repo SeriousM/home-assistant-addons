@@ -39,9 +39,9 @@ export url="$(jq --raw-output '.app_url // empty' $CONFIG_PATH)"
 # Type of database used (default: MySQL)
 export database__connection__host="$(jq --raw-output '.db_host // empty' $CONFIG_PATH)"
 export database__connection__port="$(jq --raw-output '.db_port // empty' $CONFIG_PATH)"
-export database__connection__user="$(jq --raw-output '.db_user // empty' $CONFIG_PATH)"
-export database__connection__password="$(jq --raw-output '.db_pass // empty' $CONFIG_PATH)"
-export database__connection__database="$(jq --raw-output '.db_db // empty' $CONFIG_PATH)"
+export database__connection__user="$(jq --raw-output '.db_username // empty' $CONFIG_PATH)"
+export database__connection__password="$(jq --raw-output '.db_password // empty' $CONFIG_PATH)"
+export database__connection__database="$(jq --raw-output '.db_database // empty' $CONFIG_PATH)"
 
 export mail__from="$(jq --raw-output '.mail_from_address // empty' $CONFIG_PATH)"
 export mail__options__service="$(jq --raw-output '.mail_mailer // empty' $CONFIG_PATH)"
