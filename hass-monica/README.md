@@ -28,9 +28,9 @@ Just start the addon and head to the webui at http(s)://host:port (here 7760 by 
 
 ### Documentation
 
-https://www.monicahq.com/
-https://github.com/monicahq/monica/blob/main/docs/installation/providers/docker.md
-https://hub.docker.com/_/monica/
+* https://www.monicahq.com/
+* https://github.com/monicahq/monica/blob/main/docs/installation/providers/docker.md
+* https://hub.docker.com/_/monica/
 
 ## Support
 

@@ -30,11 +30,11 @@ Just start the addon and head to the webui at http(s)://host:port (here 7760 by 
 
 ### Documentation
 
-https://ghost.org/
-https://www.howtogeek.com/devops/how-to-deploy-a-ghost-blog-with-docker/
-https://ghost.org/docs/install/docker/
-https://github.com/docker-library/ghost/blob/master/5/alpine/Dockerfile
-https://hub.docker.com/_/ghost
+* https://ghost.org/
+* https://www.howtogeek.com/devops/how-to-deploy-a-ghost-blog-with-docker/
+* https://ghost.org/docs/install/docker/
+* https://github.com/docker-library/ghost/blob/master/5/alpine/Dockerfile
+* https://hub.docker.com/_/ghost
 
 ## Support
 
