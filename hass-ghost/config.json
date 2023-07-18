@@ -1,0 +1,70 @@
+{
+  "name": "Ghost",
+  "version": "5.54.3.1",
+  "slug": "hass-ghost",
+  "description": "hass-ghost forked from SeriousM",
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "stage": "experimental",
+  "webui": "http://[HOST]:[PORT:80]/",
+  "icon": "icon.png",
+  "logo": "icon.png",
+  "panel_icon": "mdi:circle-outline",
+  "ingress": true,
+  "ingress_port": 80,
+  "ingress_stream": true,
+  "ports": {
+    "80/tcp": 2368
+  },
+  "ports_description": {
+    "80/tcp": "Ghost Web interface"
+  },
+  "options": {
+    "app_env": "production",
+    "app_url": "http://localhost",
+
+    "db_host": "127.0.0.1",
+    "db_port": 3306,
+    "db_database": "ghost",
+    "db_username": "homestead",
+    "db_password": "secret",
+    
+    "mail_mailer": "Mailgun",
+    "mail_host": "smtp.mailgun.org",
+    "mail_port": 465,
+    "mail_secure": true,
+    "mail_username": "",
+    "mail_password": "",
+    "mail_from_address": "'Acme Support' <support@example.com>",
+
+    "privacy_useUpdateCheck": true,
+    "privacy_useGravatar": true,
+    "privacy_useRpcPing": true,
+    "privacy_useStructuredData": true
+  },
+  "schema": {
+    "app_env": "list(development|production)",
+    "app_url": "str",
+
+    "db_host": "str",
+    "db_port": "port",
+    "db_database": "str",
+    "db_username": "str",
+    "db_password": "str",
+    
+    "mail_mailer": "str",
+    "mail_host": "str",
+    "mail_port": "port",
+    "mail_secure": "bool",
+    "mail_username": "str?",
+    "mail_password": "str?",
+    "mail_from_address": "str?",
+
+    "privacy_useUpdateCheck": "bool",
+    "privacy_useGravatar": "bool",
+    "privacy_useRpcPing": "bool",
+    "privacy_useStructuredData": "bool"  
+  }
+}

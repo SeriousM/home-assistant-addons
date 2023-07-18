@@ -18,30 +18,7 @@ Follow these steps to get the add-on installed on your system:
 
 ## How configure it
 
-In the configuration section, set the port if the default one is not good for you. Enable auth if you want and SSL to.
-Even if unused, let the default variables set.
-
-### Addon Configuration
-
-Add-on configuration:
-
-```yaml
-auth: false
-auth_username: auth_username
-auth_password: changeme
-webhook_url: str,
-prometheus_metrics: false,
-allow_external: moment,lodash,
-allow_builtin: *
-timezone: Europe/Berlin
-protocol: http
-certfile: fullchain.pem
-keyfile: privkey.pem
-```
-
-### Option: `auth` (required)
-
-Enable of disable the basic authentication in the web interface.
+...
 
 ## How to use it ?
 
