@@ -1,6 +1,6 @@
 {
   "name": "Ghost",
-  "version": "5.54.3.8",
+  "version": "5.54.3.9",
   "slug": "hass-ghost",
   "description": "hass-ghost forked from SeriousM",
   "arch": [
@@ -27,6 +27,7 @@
 
     "app_env": "production",
     "app_url": "http://localhost",
+    "app_admin_url": "http://localhost",
 
     "db_host": "127.0.0.1",
     "db_port": 3306,
@@ -53,6 +54,7 @@
 
     "app_env": "list(development|production)",
     "app_url": "str",
+    "app_admin_url": "str",
 
     "db_host": "str",
     "db_port": "port",

@@ -40,6 +40,9 @@ export server__port="$(jq --raw-output '.listen_port // empty' $CONFIG_PATH)"
 # Set the public URL for your blog
 export url="$(jq --raw-output '.app_url // empty' $CONFIG_PATH)"
 
+# Set the admin URL for your blog
+export admin__url="$(jq --raw-output '.app_admin_url // empty' $CONFIG_PATH)"
+
 # Type of database used (default: MySQL)
 export database__connection__host="$(jq --raw-output '.db_host // empty' $CONFIG_PATH)"
 export database__connection__port="$(jq --raw-output '.db_port // empty' $CONFIG_PATH)"
