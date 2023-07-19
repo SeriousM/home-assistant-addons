@@ -1,6 +1,6 @@
 {
   "name": "Ghost",
-  "version": "5.54.3.9",
+  "version": "5.54.3.10",
   "slug": "hass-ghost",
   "description": "hass-ghost forked from SeriousM",
   "arch": [
@@ -35,6 +35,7 @@
     "db_username": "homestead",
     "db_password": "secret",
     
+    "mail_transport": "SMTP",
     "mail_mailer": "Mailgun",
     "mail_host": "smtp.mailgun.org",
     "mail_port": 465,
@@ -62,6 +63,7 @@
     "db_username": "str",
     "db_password": "str",
     
+    "mail_transport": "list(SMTP)",
     "mail_mailer": "str",
     "mail_host": "str",
     "mail_port": "port",

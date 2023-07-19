@@ -50,7 +50,9 @@ export database__connection__user="$(jq --raw-output '.db_username // empty' $CO
 export database__connection__password="$(jq --raw-output '.db_password // empty' $CONFIG_PATH)"
 export database__connection__database="$(jq --raw-output '.db_database // empty' $CONFIG_PATH)"
 
+mail_transport
 export mail__from="$(jq --raw-output '.mail_from_address // empty' $CONFIG_PATH)"
+export mail__transport="$(jq --raw-output '.mail_transport // empty' $CONFIG_PATH)"
 export mail__options__service="$(jq --raw-output '.mail_mailer // empty' $CONFIG_PATH)"
 export mail__options__host="$(jq --raw-output '.mail_host // empty' $CONFIG_PATH)"
 export mail__options__port="$(jq --raw-output '.mail_port // empty' $CONFIG_PATH)"
