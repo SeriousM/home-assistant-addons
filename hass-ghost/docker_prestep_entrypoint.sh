@@ -28,6 +28,9 @@ echo "Set env variables"
 # For nested config options, separate with two underscores, eg. "database__connection__host"
 # defaults as they are set: https://github.com/TryGhost/Ghost/blob/c667620d8f2e32c96fe376ad0f3dabc79488532a/ghost/core/core/shared/config/defaults.json
 
+# ensure that ghost instance will write the data into the /data/ghost folder which will be backed up by home assistant
+export paths__contentPath=$GHOST_PATH_LOCAL
+
 export NODE_ENV="$(jq --raw-output '.app_env // empty' $CONFIG_PATH)"
 
 
@@ -63,16 +66,21 @@ echo "Done env variables"
 ###########
 echo "Main"
 
-# copy all files from the docker data dir into local data dir, then link it
-echo "ensure data directory link"
-if [ -d ${GHOST_PATH_LOCAL} ] ; then
-  echo "-d ${GHOST_PATH_LOCAL}"
-  #chmod o+rx ${GHOST_PATH_LOCAL}
-  chmod -R 777 ${GHOST_PATH_LOCAL}
-  # chmod -R 777 ${GHOST_DATA_STORAGE}
-  #chown -R node ${GHOST_PATH_LOCAL}/.n8n
-  ln -s ${GHOST_PATH_LOCAL} ${GHOST_DATA_STORAGE}
-fi
+# # copy all files from the docker data dir into local data dir, then link it
+# echo "ensure data directory link"
+# if [ -d ${GHOST_PATH_LOCAL} ] ; then
+#   echo "-d ${GHOST_PATH_LOCAL}"
+  
+#   # in case the content folder is the original one, we need to delete it (it's empty anyway)
+#   # to ensure we can create a symlink to the /data/ghost folder
+#   if [ -d ${GHOST_DATA_STORAGE} ] && (! test -L ${GHOST_DATA_STORAGE}); then
+#     rm -rf ${GHOST_DATA_STORAGE}
+#   fi
+
+#   ln -s ${GHOST_PATH_LOCAL} ${GHOST_DATA_STORAGE}
+  
+#   chmod -R 777 ${GHOST_PATH_LOCAL}
+# fi
 
 echo "check content folder structure"
 for origDir in $(ls ${GHOST_DATA_STORAGE_ORIG})
@@ -86,7 +94,5 @@ do
 done
 
 echo "last step"
-
-echo "Got started arguments: $@"
 
 exec node current/index.js
