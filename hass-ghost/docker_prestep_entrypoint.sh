@@ -30,6 +30,7 @@ echo "Set env variables"
 
 # ensure that ghost instance will write the data into the /data/ghost folder which will be backed up by home assistant
 export paths__contentPath=$GHOST_PATH_LOCAL
+export GHOST_CONTENT=$GHOST_PATH_LOCAL
 
 export NODE_ENV="$(jq --raw-output '.app_env // empty' $CONFIG_PATH)"
 
@@ -84,17 +85,19 @@ echo "Main"
 #   chmod -R 777 ${GHOST_PATH_LOCAL}
 # fi
 
-echo "check content folder structure"
-for origDir in $(ls ${GHOST_DATA_STORAGE_ORIG})
-do
-  if [ ! -d ${GHOST_PATH_LOCAL}/${origDir} ] ; then
-    echo "create ${GHOST_PATH_LOCAL}/${origDir} directory and copy original content into it"
-    # R: recursive, L: copy files from symlinks as files, n: don't overwrite anything
-    cp -RLn ${GHOST_DATA_STORAGE_ORIG}/${origDir} ${GHOST_PATH_LOCAL}/${origDir}
-    chmod -R 777 ${GHOST_PATH_LOCAL}
-  fi
-done
+###############################
+
+# echo "check content folder structure"
+# for origDir in $(ls ${GHOST_DATA_STORAGE_ORIG})
+# do
+#   if [ ! -d ${GHOST_PATH_LOCAL}/${origDir} ] ; then
+#     echo "create ${GHOST_PATH_LOCAL}/${origDir} directory and copy original content into it"
+#     # R: recursive, L: copy files from symlinks as files, n: don't overwrite anything
+#     cp -RLn ${GHOST_DATA_STORAGE_ORIG}/${origDir} ${GHOST_PATH_LOCAL}/${origDir}
+#     chmod -R 777 ${GHOST_PATH_LOCAL}
+#   fi
+# done
 
 echo "last step"
 
-exec node current/index.js
+exec docker-entrypoint.sh node current/index.js
