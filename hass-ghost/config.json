@@ -1,6 +1,6 @@
 {
   "name": "Ghost",
-  "version": "5.54.3.5",
+  "version": "5.54.3.6",
   "slug": "hass-ghost",
   "description": "hass-ghost forked from SeriousM",
   "arch": [
@@ -22,6 +22,9 @@
     "80/tcp": "Ghost Web interface"
   },
   "options": {
+    "listen_host": "127.0.0.1",
+    "listen_port": "2368",
+
     "app_env": "production",
     "app_url": "http://localhost",
 
@@ -45,6 +48,9 @@
     "privacy_useStructuredData": true
   },
   "schema": {
+    "listen_host": "str",
+    "listen_port": "port",
+
     "app_env": "list(development|production)",
     "app_url": "str",
 

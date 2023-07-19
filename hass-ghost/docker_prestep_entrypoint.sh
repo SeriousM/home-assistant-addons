@@ -33,6 +33,8 @@ export paths__contentPath=$GHOST_PATH_LOCAL
 
 export NODE_ENV="$(jq --raw-output '.app_env // empty' $CONFIG_PATH)"
 
+export server__host="$(jq --raw-output '.listen_host // empty' $CONFIG_PATH)"
+export server__port="$(jq --raw-output '.listen_port // empty' $CONFIG_PATH)"
 
 # Set the public URL for your blog
 export url="$(jq --raw-output '.app_url // empty' $CONFIG_PATH)"
