@@ -8,18 +8,18 @@
     "aarch64"
   ],
   "stage": "experimental",
-  "webui": "http://[HOST]:[PORT:80]/",
+  "webui": "http://[HOST]:[PORT:2368]/",
   "icon": "icon.png",
   "logo": "icon.png",
   "panel_icon": "mdi:circle-outline",
   "ingress": true,
-  "ingress_port": 80,
+  "ingress_port": 2368,
   "ingress_stream": true,
   "ports": {
-    "80/tcp": 2368
+    "2368/tcp": 2368
   },
   "ports_description": {
-    "80/tcp": "Ghost Web interface"
+    "2368/tcp": "Ghost Web interface"
   },
   "options": {
     "listen_host": "127.0.0.1",
