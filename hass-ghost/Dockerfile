@@ -1,11 +1,8 @@
-# Changelog: https://github.com/monicahq/monica/blob/main/CHANGELOG.md
 FROM ghost:5.54.3
 
 RUN apt-get update && apt-get install -y \
     jq \
     && rm -rf /var/lib/apt/lists/*
-
-EXPOSE 80/tcp
 
 WORKDIR /var/lib/ghost
 
