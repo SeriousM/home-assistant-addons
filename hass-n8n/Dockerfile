@@ -1,4 +1,4 @@
-ARG NODE_VERSION=16
+ARG NODE_VERSION=20
 FROM node:${NODE_VERSION}-alpine
 
 # https://github.com/n8n-io/n8n/blob/master/CHANGELOG.md
