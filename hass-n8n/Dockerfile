@@ -1,8 +1,9 @@
 ARG NODE_VERSION=20
 FROM node:${NODE_VERSION}-alpine
 
+# https://www.npmjs.com/package/n8n?activeTab=versions
 # https://github.com/n8n-io/n8n/blob/master/CHANGELOG.md
-ARG N8N_VERSION=1.5.1
+ARG N8N_VERSION=1.7.1
 
 RUN if [ -z "$N8N_VERSION" ] ; then echo "The N8N_VERSION argument is missing!" ; exit 1; fi
 
