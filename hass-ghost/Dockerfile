@@ -1,4 +1,4 @@
-FROM ghost:5.62.0
+FROM ghost:5.82.2
 
 RUN apt-get update && apt-get install -y \
     jq \

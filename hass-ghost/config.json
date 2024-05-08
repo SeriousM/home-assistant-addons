@@ -1,6 +1,6 @@
 {
   "name": "Ghost",
-  "version": "5.62.0.0",
+  "version": "5.82.2.0",
   "slug": "hass-ghost",
   "description": "hass-ghost forked from SeriousM",
   "arch": [
